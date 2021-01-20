@@ -7,13 +7,14 @@ import time
 '''##########################################################'''
 
 # Direction angles for turtle
-north = 90
 east = 0
+north = 90
 west = 180
 south = 270
 
 # Step value for character movements
-step = 10
+hero_step = 10
+step = 1
 
 # Number of villains per level, labels to denote level and difficulty
 villain_count = 10
@@ -23,6 +24,7 @@ difficulty = 1
 # Inputting all the game data
 heroes = ['images/001.gif', 'images/004.gif', 'images/007.gif', 'images/025.gif']
 bullet_types = ['images/leafs.gif', 'images/flame.gif', 'images/wave.gif', 'images/thunder.gif']
+villain_chars = ['images/trash_1.gif', 'images/trash_2.gif', 'images/trash_3.gif', 'images/trash_4.gif']
 backgrounds = ['images/grass.gif', 'images/fire.gif', 'images/water.gif', 'images/electric.gif']
 highscore = 'highscores.txt'
 
@@ -30,6 +32,7 @@ highscore = 'highscores.txt'
 for i in range(4):
     turtle.register_shape(heroes[i])
     turtle.register_shape(bullet_types[i])
+    turtle.register_shape(villain_chars[i])
 
 # Code for the opening screen
 turtle.speed(0)
@@ -39,7 +42,9 @@ screen = turtle.Screen()
 screen.title("Pokemons vs Pollutionators")
 screen.bgcolor('white')
 turtle.color('black')
-start_str = "The game will begin in a few seconds, get ready!"
+start_str = "The game will begin in a few seconds, get ready! \n \n" \
+            "     Use the arrow keys to move your Pokemon \n" \
+            "           Use the spacebar to attack"
 turtle.setpos(0, 0)
 turtle.write(start_str, align='center', font=("Arial", 20, "bold"))
 time.sleep(4)
@@ -185,7 +190,7 @@ class hero:
     def key_up(self):
         hero.t.penup()
         hero.t.setheading(north)
-        hero.t.forward(step)
+        hero.t.forward(hero_step)
         print(hero.t.pos())
 
     def key_left(self):
@@ -211,14 +216,14 @@ class hero:
 
 
 class aliens():
-    villain_chars = ['images/trash_1.gif', 'images/trash_2.gif', 'images/trash_3.gif', 'images/trash_4.gif']
-
-    for alien in villain_chars:
-        turtle.register_shape(alien)
+    # villain_chars = ['images/trash_1.gif', 'images/trash_2.gif', 'images/trash_3.gif', 'images/trash_4.gif']
+    #
+    # for alien in villain_chars:
+    #     turtle.register_shape(alien)
 
     def __init__(self):
         self.villain = turtle.Turtle()
-        self.alien_shape = random.choice(aliens.villain_chars)
+        self.alien_shape = random.choice(villain_chars)
         self.villain.shape(self.alien_shape)
         self.x = random.randint(-300, 300)
         self.y = random.randint(150, 300)
@@ -228,6 +233,15 @@ class aliens():
 
     def die(self):
         self.villain.ht()
+
+    def move(self):
+        if self.x > 350:
+            self.x = -350
+            # As the difficulty increases, the villains come down faster
+            self.y -= 10 + (difficulty)
+        self.x = self.x + step + (level * 0.5)
+        self.villain.goto(self.x, self.y)
+
 
 
 class bullets():
@@ -294,14 +308,19 @@ game_over(hero, villains)
 
 while True:
 
+    turtle.tracer(0, 0)
     ##    Code to break out of while loop and stop if the hero dies
     if game_over(hero, villains):
         break
+    turtle.update()
+
 
     ##    Code for bullet movement and killing the pollutionators
     if bullet.t.state:
+        turtle.tracer(0, 0)
         bullet.t.setheading(north)
-        bullet.t.forward(68)
+        bullet.t.forward(15)
+        turtle.update()
 
         # Code for killing a villain when shot by a bullet
         for villain in villains:
@@ -319,22 +338,28 @@ while True:
         bullet.t.speed(0)
         bullet.t.goto(hero.t.pos())
 
+
     # Code to change the bullet's state after the shot
     if bullet.t.ycor() >= 350:
         bullet.t.state = False
         bullet.t.ht()
 
+    turtle.tracer(0, 0)
     ##    Code for moving the villains
-    for i in range(len(villains)):
+    for villain in villains:
+        villain.move()
+    turtle.update()
 
-        if villains[i].x > 350:
-            villains[i].x = -350
-            # As the difficulty increases, the villains come down faster
-            villains[i].y -= 50 + (difficulty * 10)
-        # As the level increases, the villains move faster
-        villain_step = step - i + (level * 5)
-        villains[i].x += villain_step
-        villains[i].villain.goto(villains[i].x, villains[i].y)
+    # for i in range(len(villains)):
+    #
+    #     if villains[i].x > 350:
+    #         villains[i].x = -350
+    #         # As the difficulty increases, the villains come down faster
+    #         villains[i].y -= 50 + (difficulty * 10)
+    #     # As the level increases, the villains move faster
+    #     villains[i].x += step + (level * 5)
+    #
+    #     villains[i].villain.goto(villains[i].x, villains[i].y)
 
     ##    Code for transitioning into the next level after all the villains die
     if len(villains) == 0:
