@@ -103,7 +103,7 @@ def hero_selector(hero, bullet):
     hero.t.shape(heroes[num])
     bullet.t.shape(bullet_types[num])
     screen.bgpic(backgrounds[num])
-    screen.setup(800, 800)
+    screen.setup(900, 900)
 
 def fetch_highscore(highscore):
     ''' Function fetch_highscore
@@ -196,21 +196,21 @@ class hero:
     def key_left(self):
         hero.t.penup()
         hero.t.setheading(west)
-        hero.t.forward(step)
+        hero.t.forward(hero_step)
         hero.t.setheading(north)
         print(hero.t.pos())
 
     def key_right(self):
         self.t.penup()
         self.t.setheading(east)
-        self.t.forward(step)
+        self.t.forward(hero_step)
         self.t.setheading(north)
         print(self.t.pos())
 
     def key_down(self):
         hero.t.penup()
         hero.t.setheading(south)
-        hero.t.forward(step)
+        hero.t.forward(hero_step)
         hero.t.setheading(north)
         print(hero.t.pos())
 
