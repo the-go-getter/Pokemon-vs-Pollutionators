@@ -1,9 +1,11 @@
 <h2> Pokemon vs Pollutionators game </h2>
 
-This is the repository for a python game inspired by the 80s blockbuster game 
-Space Invaders by SEGA.  
+<p> This is the repository for a python game inspired by the 80s blockbuster game 
+Space Invaders by SEGA </p>
+  
 ---
-<h4>Run the game.py file in any Python IDE to open this game</h4>
+
+<h4> Run the game.py file in any Python IDE to open this game </h4>
 
 ---
 
