@@ -8,7 +8,7 @@ Space Invaders by SEGA.
 ---
 
 <h5>Screenshots:</h5>
-![Bulbasaur](./screenshots/bulbasaur.PNG "Pokemon vs Pollutionators 1")  
-![Charmander](./screenshots/charmander.PNG "Pokemon vs Pollutionators 2")  
-![Squirtle](./screenshots/squirtle.PNG "Pokemon vs Pollutionators 3")  
-![Pikachu](./screenshots/pikachu.PNG "Pokemon vs Pollutionators 4")  
+![Bulbasaur](https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/bulbasaur.PNG "Pokemon vs Pollutionators 1")  
+![Charmander](https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/charmander.PNG "Pokemon vs Pollutionators 2")  
+![Squirtle](https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/squirtle.PNG "Pokemon vs Pollutionators 3")  
+![Pikachu](https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/pikachu.PNG "Pokemon vs Pollutionators 4")  
