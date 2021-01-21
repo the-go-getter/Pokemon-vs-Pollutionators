@@ -8,8 +8,11 @@ Space Invaders by SEGA.
 ---
 
 <h5>Screenshots:</h5>
-<img src="https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/bulbasaur.PNG" alt="Pokemon vs Pollutionators Bulbasaur"/>
-![Bulbasaur](https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/bulbasaur.PNG "Pokemon vs Pollutionators 1")  
-![Charmander](https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/charmander.PNG "Pokemon vs Pollutionators 2")  
-![Squirtle](https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/squirtle.PNG "Pokemon vs Pollutionators 3")  
-![Pikachu](https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/pikachu.PNG "Pokemon vs Pollutionators 4")  
+<img src="https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/bulbasaur.PNG" 
+alt="Pokemon vs Pollutionators Bulbasaur"/>
+<img src="https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/charmander.PNG" 
+alt="Pokemon vs Pollutionators Charmander"/>
+<img src="https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/squirtle.PNG" 
+alt="Pokemon vs Pollutionators Squirtle"/>
+<img src="https://github.com/the-go-getter/Pokemon-vs-Pollutionators/blob/master/screenshots/pikachu.PNG" 
+alt="Pokemon vs Pollutionators Pikachu"/>
